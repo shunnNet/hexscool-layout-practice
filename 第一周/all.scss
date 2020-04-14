@@ -141,9 +141,8 @@ body {
     .--point:not(:last-child) {
         &::after {
             content: "";
-            border: 1px solid #96a9c4;
+            border-left: 1px solid #96a9c4;
             position: absolute;
-            top: 0px;
             left: 0em;
             height: 100%;
             transform: translateX(-50%);
