@@ -1,0 +1,290 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.a__block, .reset-a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.a__block:hover, .reset-a:hover {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.a__block:active, .reset-a:active {
+  color: inherit;
+}
+
+.a__block {
+  display: block;
+}
+
+.a__block:hover {
+  text-decoration: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, "Bold italic";
+}
+
+.container-lg {
+  max-width: 1200px;
+}
+
+.title--1 {
+  font-size: 80px;
+  line-height: 94px;
+}
+
+.title--2 {
+  font-size: 64px;
+  line-height: 75px;
+}
+
+.paragraph--1 {
+  font-size: 24px;
+  line-height: 42px;
+}
+
+.paragraph--2, .sub-title--1 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.paragraph--3 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.list--circle {
+  position: relative;
+}
+
+.list--circle::before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #891818;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  left: -16px;
+}
+
+.grid-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.grid-row [class*="grid__item"] {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 24px;
+}
+
+.grid-row [class*="grid__item"]:last-child {
+  margin-right: 0;
+}
+
+.flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-main-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-main-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-sub-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-sub-between {
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+}
+
+.flex-all-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icon {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+
+.img--fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.d-block {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.color-contrast {
+  color: #ffffff;
+}
+
+.bg--black {
+  background-color: black;
+}
+
+.bg--center {
+  background-position: center;
+}
+
+.bg--bottom {
+  background-position: bottom;
+}
+
+.bg--contain {
+  background-size: contain;
+}
+
+.bg--cover {
+  background-size: cover;
+}
+
+.mg-b-6x {
+  margin-bottom: 48px;
+}
+
+.mg-b-5x {
+  margin-bottom: 40px;
+}
+
+.mg-b-4x {
+  margin-bottom: 32px;
+}
+
+.mg-b-3x {
+  margin-bottom: 24px;
+}
+
+.mg-b-2x {
+  margin-bottom: 16px;
+}
+
+.mg-b-1-5x {
+  margin-bottom: 12px;
+}
+
+.mg-r-3x {
+  margin-bottom: 24px;
+}
+
+.mg-r-2x {
+  margin-bottom: 16px;
+}
+
+.pd-t-8x {
+  padding-bottom: 64px;
+}
+
+.pd-b-10x {
+  padding-bottom: 80px;
+}
+
+.pd-b-20x {
+  padding-bottom: 160px;
+}
+
+.v-align-top {
+  vertical-align: top;
+}
+/*# sourceMappingURL=all.css.map */
