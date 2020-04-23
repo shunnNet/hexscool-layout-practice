@@ -1,6 +1,19 @@
 @import "reset";
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 
+@font-face {
+    font-family: 'Roboto Bold Italic';
+    src: url(./asset/Roboto/Roboto-BoldItalic.ttf) format('truetype')     
+}
+@font-face {
+    font-family: 'Roboto Black Italic';
+    src: url(./asset/Roboto/Roboto-BlackItalic.ttf) format('truetype')     
+}
+@font-face {
+    font-family: 'Roboto Medium Italic';
+    src: url(./asset/Roboto/Roboto-MediumItalic.ttf) format('truetype')
+}
+
 $contrast: #ffffff;
 $sub : #891818;
 
@@ -40,20 +53,35 @@ $gutter : $space * 3;
 }
 
 body {
-    font-family: Roboto, "Bold italic";
+    font-family: 'Roboto Medium Italic', "Noto Sans TC", "san-serif";
 }
 
 
 .container-lg {
     max-width: 1200px;
 }
+.title--subTitle{
+    position: relative;
+    &::before {
+        content : attr(content);
+        font-family: 'Roboto Bold Italic', "Noto Sans TC", "san-serif";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
 
 .title--1{
+    font-family: 'Roboto Black Italic', "Noto Sans TC", "san-serif";
     font-size: 80px;
     line-height: 94px;
 }
 
 .title--2{
+    font-family: 'Roboto Medium Italic', "Noto Sans TC", "san-serif";
     font-size: 64px;
     line-height: 75px;
 }
@@ -72,18 +100,34 @@ body {
     line-height: 28px;
 }
 
-
-.list--circle{
+.styleList{
+    display: flex;
+    align-items: center;
+    &--circle{
+        &::before{
+            content: '';
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: $sub;
+            margin-right: 16px;
+        }
+    }
+}
+.styleList2{
     position: relative;
-    &::before{
-        content: '';
-        position: absolute;
-        width: 22px;
-        height: 22px;
-        border-radius: 50%;
-        background-color: $sub;
-        transform: translateX(-100%);
-        left: -16px;
+    &--circle{
+        &::before{
+            position: absolute;
+            display: block;
+            content: '';
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: $sub;
+            transform: translateX(-100%);
+            left: -16px;
+        }
     }
 }
 
@@ -163,6 +207,20 @@ body {
 .bg--cover{
     background-size: cover;
 }
+.bg--norepeat{
+    background-repeat: no-repeat;
+}
+
+.lh-7x{
+    line-height: $space * 7;
+}
+.lh-4x{
+    line-height: $space * 4;
+}
+
+.mg-b-7x{
+    margin-bottom: $space * 7;
+}
 
 .mg-b-6x{
     margin-bottom: $space * 6;
@@ -180,18 +238,28 @@ body {
 .mg-b-2x{
     margin-bottom: $space * 2;
 }
+.mg-b-1-75x{
+    margin-bottom: $space * 1.75;
+}
+
 .mg-b-1-5x{
     margin-bottom: $space * 1.5;
+}
+.mg-b-1x{
+    margin-bottom: $space;
 }
 .mg-r-3x{
     margin-bottom: $space * 3;
 }
 .mg-r-2x{
-    margin-bottom: $space * 2;
+    margin-right: $space * 2;
 }
 
 .pd-t-8x{
-    padding-bottom: $space * 8;
+    padding-top: $space * 8;
+}
+.pd-b-7x{
+    padding-bottom: $space * 7;
 }
 .pd-b-10x{
     padding-bottom: $space * 10;
@@ -199,6 +267,10 @@ body {
 
 .pd-b-20x{
     padding-bottom: $space * 20;
+}
+
+.bd-b-1{
+    border-bottom: 1px solid black;
 }
 
 .reset-a{
@@ -210,4 +282,19 @@ body {
 
 .v-align-top{
     vertical-align: top;
+}
+
+.h-full{
+    height: 100%;
+}
+.w-full{
+    width: 100%;
+}
+
+.fm-bold-italic{
+    font-family: "Roboto bold Italic" , "Noto Sans TC", "san-serif";
+}
+
+.text-nowrap{
+    white-space: nowrap;
 }
