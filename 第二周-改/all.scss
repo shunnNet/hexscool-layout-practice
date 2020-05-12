@@ -1,0 +1,338 @@
+@import "reset";
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+@font-face {
+    font-family: 'Roboto Bold Italic';
+    src: url(./asset/Roboto/Roboto-BoldItalic.ttf) format('truetype')     
+}
+@font-face {
+    font-family: 'Roboto Black Italic';
+    src: url(./asset/Roboto/Roboto-BlackItalic.ttf) format('truetype')     
+}
+@font-face {
+    font-family: 'Roboto Medium Italic';
+    src: url(./asset/Roboto/Roboto-MediumItalic.ttf) format('truetype')
+}
+
+$contrast: #ffffff;
+$sub : #891818;
+$space : 8px;
+$gutter : $space * 3;
+
+%reset-a{
+    text-decoration: none;
+    color: inherit;
+    &:hover{
+        text-decoration: underline;
+        color: inherit;
+    }
+    &:active{
+        color: inherit;
+    }
+}
+%a__block{
+    @extend %reset-a;
+    display: block;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Medium Italic', "Noto Sans TC", "san-serif";
+}
+
+img{
+    vertical-align: bottom;
+}
+
+.bannerBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: $space * 8;
+    padding-bottom: $space * 20;
+}
+
+.Intro{
+    background-image: url("./asset/entry.png");
+    background-position: center;
+    background-size: cover;
+    color: $contrast;
+    font-family: "Roboto bold Italic" , "Noto Sans TC", "san-serif";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 958px;
+}
+.About{
+    text-align: center;
+    font-family: "Roboto bold Italic" , "Noto Sans TC", "san-serif";
+}
+.Works{
+    background-image: url(./asset/頭髮甩甩.png); 
+    background-position: center 361px; 
+    background-size: 1920px auto;
+    background-repeat: no-repeat;
+}
+
+.Brand{
+    background-color: black;
+    color: $contrast;
+}
+
+.Contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: $space * 8;
+    padding-bottom: $space * 10;
+    background-color: black;
+    color: $contrast;
+}
+
+
+
+
+
+
+.container-lg {
+    max-width: 1200px;
+}
+
+
+.title--1{
+    font-family: 'Roboto Black Italic', "Noto Sans TC", "san-serif";
+    font-size: 80px;
+    line-height: 94px;
+}
+
+.title--2{
+    font-family: 'Roboto Medium Italic', "Noto Sans TC", "san-serif";
+    font-size: 64px;
+    line-height: 75px;
+}
+
+.title--subTitle{
+    position: relative;
+    &::before {
+        content : attr(content);
+        font-family: 'Roboto Bold Italic', "Noto Sans TC", "san-serif";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.paragraph--1{
+    font-size: 24px;
+    line-height: 42px;
+}
+
+.paragraph--2, .sub-title--1{
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.paragraph--3{
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.styleList{
+    display: flex;
+    align-items: center;
+    &--circle{
+        &::before{
+            content: '';
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: $sub;
+            margin-right: 16px;
+        }
+    }
+}
+
+.icon{
+    display: block;
+    width: 60px;    
+    height: 60px;
+}
+
+
+.grid-row{
+    display: flex;
+    .grid__item{
+        flex: 1 1 0;
+        margin-right: $gutter;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+}
+
+.f-col{
+    display: flex;
+    flex-direction: column;
+}
+.f-wrap{
+    flex-wrap: wrap;
+}
+
+.f-row{
+    display: flex;
+}
+
+.f-main-center{
+    justify-content: center;
+}
+.f-main-between{
+    justify-content: space-between;
+}
+.f-sub-center{
+    align-items: center;
+}
+
+.f-sub-between{
+    align-items: space-between;
+}
+.f-all-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.img--fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.d-block {
+    display: block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.color-contrast{
+    color : $contrast
+}
+
+.bg--black {
+    background-color: black;
+}
+.bg--center{
+    background-position: center;
+}
+.bg--bottom{
+    background-position: bottom;
+}
+.bg--contain{
+    background-size: contain;
+}
+.bg--cover{
+    background-size: cover;
+}
+.bg--norepeat{
+    background-repeat: no-repeat;
+}
+
+.mg-b-7x{
+    margin-bottom: $space * 7;
+}
+
+.mg-b-6x{
+    margin-bottom: $space * 6;
+}
+.mg-b-5x{
+    margin-bottom: $space * 5;
+}
+
+.mg-b-4x{
+    margin-bottom: $space * 4;
+}
+.mg-b-3x{
+    margin-bottom: $space * 3;
+}
+.mg-b-2x{
+    margin-bottom: $space * 2;
+}
+.mg-b-1-75x{
+    margin-bottom: $space * 1.75;
+}
+
+.mg-b-1-5x{
+    margin-bottom: $space * 1.5;
+}
+.mg-b-1x{
+    margin-bottom: $space;
+}
+.mg-r-3x{
+    margin-right: $space * 3;
+}
+.mg-r-2x{
+    margin-right: $space * 2;
+}
+.pd-t-10x{
+    padding-top: $space * 10;
+}
+
+.pd-t-8x{
+    padding-top: $space * 8;
+}
+.pd-b-7x{
+    padding-bottom: $space * 7;
+}
+.pd-b-10x{
+    padding-bottom: $space * 10;
+}
+
+.pd-b-20x{
+    padding-bottom: $space * 20;
+}
+
+.bd-b-1{
+    border-bottom: 1px solid black;
+}
+
+.reset-a{
+    @extend %reset-a;
+}
+.a__block{
+    @extend %a__block;
+}
+
+.h-full{
+    height: 100%;
+}
+.w-full{
+    width: 100%;
+}
+
+.lh-7x{
+    line-height: $space * 7;
+}
+.lh-4x{
+    line-height: $space * 4;
+}
+
+.max-w-48x{
+    max-width: $space * 48;
+}
+
+.fm-bold-italic{
+    font-family: "Roboto bold Italic" , "Noto Sans TC", "san-serif";
+}
+
+.text-nowrap{
+    white-space: nowrap;
+}
