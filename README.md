@@ -20,6 +20,7 @@
 - [keybr 每日打字練習](https://www.keybr.com/)
 
 ## Week 2 after review
+[Week 2 person-layout-after-review](https://shunnnet.github.io/hexscool-layout-practice/%E7%AC%AC%E4%BA%8C%E5%91%A8-%E6%94%B9/person.html)
 第二周，經助教建議後修改
 1. 將 section & article 區塊拉到 main 底下第一層，強調區塊感。
 2. 將各大區塊的樣式寫成具有特定語意的 class。 e.g Intro、About 等。
@@ -27,3 +28,4 @@
 3. 簡化 DOM 節點。當初可能是考量到擴充性，所以寫的比較累贅。但也許夠用就好？
 4. 修正、簡化一些樣式的寫法。
 5. 修改 Intro 文字與背景的相對關係。
+
