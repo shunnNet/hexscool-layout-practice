@@ -1,0 +1,67 @@
+.box-full{
+    @extend %layoutBoxBase;
+    max-width: $container-full;
+}
+.box-lg{
+    @extend %layoutBoxBase;
+    max-width: $container-lg;
+}
+.box-md{
+    @extend %layoutBoxBase;
+    max-width: $container-md;
+}
+
+// font & text
+
+.text-center{
+    text-align: center;
+}
+// display
+.d-none{
+    display: none;
+}
+
+.d-block{
+    display: block;
+}
+
+.d-flex{
+    display: flex;
+}
+
+// flex
+.f-col{
+    flex-direction: column;
+}
+
+.f-main-end{
+    justify-content: flex-end;
+}
+.f-main-center{
+    justify-content: center;
+}
+
+.f-cross-center{
+    align-items: center;
+}
+.f-all-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.f-self-cross-start{
+    align-self: flex-start;
+}
+
+.flex-1{
+    flex : 1 1 1px;
+    // ie11 will not stretch when row, and basis is 0;
+}
+.f-wrap{
+    flex-wrap: wrap;
+}
+
+// width & height
+.w-full{
+    width: 100%;
+}

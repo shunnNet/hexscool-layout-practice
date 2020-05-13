@@ -1,0 +1,24 @@
+$main : #AA0601;
+$main_em : #650300;
+$dark : #111619;
+$sub  : #FBF2F2;
+$black :#000000;
+$contrast : #FFFFFF;
+
+$font-family-base : -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial,sans-serif;
+
+$body-bg      : initial;
+$body-color   : $black ;
+
+$container-full : (1920 / 16)#{rem}; 
+$container-lg   : (1200 / 16)#{rem};
+$container-md   : ( 804 / 16)#{rem};
+
+// breakpoint
+$breakpoint-iphoneX     : 23.4375em; // 375px
+$breakpoint-mobile      : 35.5em; // 568px
+$breakpoint-pad         : 48em; // 768px
+$breakpoint-screen      : 64em; // 1024px
+$breakpoint-screen-wide : 80em; // 1280px
+
+$space : 0.5em;
