@@ -1,0 +1,178 @@
+.post{
+    &__header{
+        margin-bottom: $space * 3;
+        &__title{
+            margin-bottom: $space * 0.5;
+            font-size: 3rem;
+            line-height: 1.4;
+        }
+        &__subTitle{
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.75rem;
+            line-height: 1.3;
+        }
+        &__subTitle__desc{
+            align-self: flex-end;
+            font-size: 1rem;
+            line-height: 1.3125;
+        }
+        &__tags{
+            display: flex;
+            font-size: 1.5rem;
+            line-height: 1.33333;
+            &__tag{
+                margin-right: $space * 2;
+            }
+        }
+    }
+    &__section{
+        margin-bottom: $space * 6;
+        font-size: 1.25rem;
+        &__img{
+            margin-bottom: $space * 3;
+        }
+        &__p{
+            margin-bottom: $space * 5;
+        }    
+        &__img:last-child, &__p:last-child{
+            margin-bottom: 0;
+        }
+    }
+    &__shareBar{
+        display: flex;
+        align-items: center;
+        margin-bottom: $space * 1.75;
+        &__title{
+            margin-right: $space * 2;
+            font-size: 1.25rem;
+            line-height: 1.4;
+        }
+        &__icon{
+            margin-right: $space * 2;
+            font-size: 1.5rem;
+        }
+    }
+    &__hr{
+        margin-bottom: $space * 3;
+    }
+    &__footNav{
+        display: flex;
+        justify-content: space-between;
+        &__prev, &__next{
+            display: block;
+        }
+        &__nextMobile{
+            display: none;
+        }
+    }
+}
+
+@include pad{
+    .post{
+        &__header{
+            margin-bottom: $space * 2;
+            &__title{
+                font-size: 2rem;
+                line-height: 1.40625;
+                margin-bottom: $space * 0.5;
+            }
+            &__subTitle{
+                font-size: 1rem;
+                line-height: 1.3125;
+                &__desc{
+                    font-size: 0.875rem;
+                    line-height: (19 / 14);
+                }
+            }
+            &__tags{
+                font-size: 1rem;
+                line-height: 1.3125;
+                &__tag{
+                    margin-right: $space;
+                }
+            }
+        }
+        &__section{
+            margin-bottom: $space * 4;
+            font-size: 1rem;
+            &__img{
+                margin-bottom: $space * 2;
+            }
+            &__p{
+                margin-bottom: $space * 4.5;
+            }
+        }
+        &__shareBar{
+            margin-bottom: $space * 2;
+            &__title{
+                font-size: 1rem;
+                line-height: 1.375;
+            }
+            &__icon{
+                font-size: 1.25rem;
+            }
+        }
+        &__hr{
+            margin-bottom: $space * 2;
+        }
+    }
+}
+
+
+@include mobile{
+    .post{
+        &__header{
+            &__title{
+                font-size: 1.25rem;
+                line-height: 1.4;
+                margin-bottom: $space * 0.5;
+            }
+            &__subTitle{
+                font-size: 0.875rem;
+                line-height: (19 / 14);
+            }
+            &__tags{
+                font-size: 0.875rem;
+                line-height: (19 / 14);
+            }
+        }
+        &__section{
+            margin-bottom: $space * 4;
+            &__p{
+                margin-bottom: $space * 3;
+            }
+        }
+        &__hr{
+            margin-bottom: $space;
+        }
+        &__footNav{
+            flex-direction: column;
+            &__prev{
+                margin-bottom: $space;
+            }
+            &__next{
+                display: none;
+            }
+            &__nextMobile{
+                display: block;
+            }
+        }
+    }
+}
+
+
+.post--main{
+    .post__header{
+        &__title, &__subTitle{
+            font-weight: bold;
+        }
+        &__subTitle__desc{
+            color: #6C6C6C;
+        }
+    }
+    .post__section{
+        color: rgba(10, 10, 10, 0.6);
+        font-weight: bold;
+    }
+}

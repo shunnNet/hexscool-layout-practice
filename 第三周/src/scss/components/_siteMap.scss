@@ -1,0 +1,16 @@
+.siteMap{
+    font-weight: lighter;
+    &__point{
+        &__link:hover{
+            color: $main;
+        }
+
+        &:last-child{
+            color: $main;
+        }
+        
+        &:not(:last-child)::after{
+            content : "／";
+        }
+    }
+}

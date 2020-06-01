@@ -1,0 +1,16 @@
+include _iconParagraph
+
+mixin puzzle()
+    .puzzle
+        div.puzzle__left
+            img(src="./img/zac-wolff-2qfYizn95pk-unsplash.png")
+        div.puzzle__right
+            img.puzzle__right__img(src="./img/61.png")
+            img.puzzle__right__img(src="./img/34.png" class="d-none d-block-mb")
+            .puzzle.puzzleL2
+                div.puzzle__left
+                div.puzzle__right
+                    img.puzzle__right__img(src="./img/34.png" class="d-none-mb")
+                    .puzzle__more
+                        .puzzle__more__layerBack
+                        +iconParagraphMoreShadow()(href=attributes.href)

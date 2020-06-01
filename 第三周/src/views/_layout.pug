@@ -1,0 +1,52 @@
+include mixins/_menu
+include mixins/_iconParagraph
+
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="all.css")
+        script(src="https://kit.fontawesome.com/8f304d084d.js" crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        
+    body
+        div.l-navFixBox
+            nav.l-nav.px-0-mb
+                button.l-nav__toggler.d-none.d-block-mb(data-toggle="js-main-menu")#js-main-menu-toggler
+                    i.fas.fa-bars
+                a.l-nav__logo(href="./index.html")
+                    h1 佳龍絲眼鏡
+                +menu("main")(id="js-main-menu")
+
+        
+        block content
+        
+        footer.l-footer
+            div.l-footer__wrap
+                div.l-footer__body
+                    nav.l-footer__body__nav
+                        +menu("foot")
+                        +menu("social")
+                    
+                    address
+                        a.d-block(href="tel:0800-000-000" class="mb-200 mb-100-pad")
+                            +iconParagraph("footerAddr",["fas","fa-phone-alt"],"0800-000-000")
+                            
+                        a.d-block(href="mailto:glasses@business.com")
+                            +iconParagraph("footerAddr",["far","fa-envelope"],"glasses@business.com")
+                            
+                            
+                div.l-footer__foot
+                    div.l-footer__foot__logo
+                    div.l-footer__foot__info
+                        p.mb-100-mb.fz-rem-1.lh-125.fz-rem-085-mb.lh-140-mb Copyright © 2020 Glasses.All rights reserved.
+                        +menu("policy")
+        
+        script(src="all.js")
+
+
+
+

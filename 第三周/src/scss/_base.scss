@@ -1,4 +1,10 @@
 
+@font-face {
+    font-family: 'Roboto';
+    font-weight: bold;
+    src: url(./font/Roboto-Bold.ttf) format('truetype');
+}
+
 *, *::before, *::after{
     box-sizing: border-box;
 }
@@ -17,11 +23,40 @@ body {
     font-family     : $font-family-base;
     line-height: 1.5;
     overflow-y : scroll;
-    //overflow-x: hidden; /* prevent transform transition from right out of the window */
+    overflow-x: hidden; /* prevent transform transition from right out of the window */
 }
 h1, h2, h3, h4, h5, h6{
     line-height: 1.2;
 }
+.h1{
+    font-size: 2rem;
+    line-height: 1.40625;
+}
+.h2{
+    font-size: 1.5rem;
+    line-height: 1.333333333;
+}
+.h3{
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.h4{
+    font-size: 1rem;
+    line-height: 1.375;
+}
+
+.h5{
+    font-size: 0.875rem;
+    line-height: 1.357142857;
+}
+
+hr{
+    border: 0;
+    border-bottom: 1px solid;
+    margin: 0;
+}
+
 
 a{
     @extend %no-pointer-touch-device;
@@ -40,17 +75,21 @@ form {
 }
 
 input,
-button,
-select {
-    @extend %reset-input-text;
-    font-size       : 1em;
+select,
+textarea {
+    background: none;
     font-family     : $font-family-base;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.375;
+    padding: 14px 16px;
+}
+button, [type="submit"]{
+    @extend %reset-input-text;
+    font-family     : $font-family-base;
 }
 
 input{
     background-color: white;
-    border-radius: 5px;
 }
 
 button, [type="button"], [type="reset"], [type="submit"] {
@@ -59,17 +98,22 @@ button, [type="button"], [type="reset"], [type="submit"] {
     -webkit-appearance: none;
     
 }
+textarea{
+    resize: none;
+}
 
 select {
     @extend %no-pointer-touch-device;
     cursor: pointer;
-    appearance: none;
-    -webkit-appearance:none;
-    -moz-appearance: none;
+    
     // background-image : url(/static/images/arrow_down_black.png);
     // background-repeat: no-repeat;
     // background-position: right center;
-    background-size: 1em;
-    padding-right: 30px;
-    
+    //background-size: 1em;
+}
+
+.fab, .fas, .far{
+    width: 1em;
+    text-align: center;
+    vertical-align: bottom; // or will get more 3px at bottom
 }

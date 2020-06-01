@@ -1,0 +1,87 @@
+extend _layout.pug
+
+block content
+    include mixins/_post
+    include mixins/_tagList
+    include mixins/_siteMap
+    - 
+        var options = {
+            img : "./img/70@2x.png",
+            title : "台北中山旗艦店",
+            tel : "(02)000-1234",
+            startTime : "10:00",
+            endTime : "21:00",
+            address : "台北市中山區南京東路25巷2-1號"
+        }
+        var optionsA = {
+            
+            title : "情人特別企劃",
+            subTitle : "2020 Valentine’s Special",
+            dateString : "2020/02/14",
+            tags : ["special", "event"],
+            prev : {
+                title : "街頭潮人訪問 1",
+                link : "#街頭潮人訪問_1"
+            },
+            next : {
+                title : "街頭潮人訪問 2",
+                link : "#街頭潮人訪問_2"
+            },
+            innerHTML : `
+                <img class="post__section__img" src="./img/56@2x.png" />
+                <p class="post__section__p">
+                    一年一度西洋情人節即將到來，我們推出最強「情人節企劃」，為這個甜蜜的節日加溫。<br>
+                    本次拍攝的鏡框款式與 NEEDS CLASSIC 聯名設計款，
+                    偶爾跟另一半來個低調情侶單品，結合彼此喜好、找出合適框型款式，在這個春夏輕鬆搭出屬於你們的甜蜜默契！
+                </p>
+                <img class="post__section__img" src="./img/44@2x.png" />
+                <p class="post__section__p">
+                    一年一度西洋情人節即將到來，我們推出最強「情人節企劃」，為這個甜蜜的節日加溫。<br>
+                    本次拍攝的鏡框款式與 NEEDS CLASSIC 聯名設計款，
+                    偶爾跟另一半來個低調情侶單品，結合彼此喜好、找出合適框型款式，在這個春夏輕鬆搭出屬於你們的甜蜜默契！
+                </p>
+                <img class="post__section__img" src="./img/48@2x.png" />
+                <p class="post__section__p">
+                    一年一度西洋情人節即將到來，我們推出最強「情人節企劃」，為這個甜蜜的節日加溫。<br>
+                    本次拍攝的鏡框款式與 NEEDS CLASSIC 聯名設計款，
+                    偶爾跟另一半來個低調情侶單品，結合彼此喜好、找出合適框型款式，在這個春夏輕鬆搭出屬於你們的甜蜜默契！
+                </p>
+                <img class="post__section__img" src="./img/92@2x.png" />
+                <p class="post__section__p">2/14(五)-2/20(日)<br />
+                    至本店單筆消費滿2980元, 就送情人節限定眼鏡盒1個<br />
+                    期間優惠還有~~持他牌鏡框更換鏡片<br />
+                    薄型非球面鏡片折300元<br />
+                    濾藍光鏡片折500元<br />
+                    <br />
+                    快快帶上另一半 讓彼此每一次睜開眼，都被愛的視線包圍！
+                </p>
+            `
+        }
+        var allTags = ["special","sale", "new_item", "interview","trivia","news", "event"]
+        var sitePoints = [
+            { text : "首頁", link : "#" },
+            { text : "部落格", link : "#" },
+            { text : "特別企劃", link : "#" },
+            { text : "情人特別企劃", link : "#" },
+        ]
+    
+    main.l-main
+        nav.box-full.bg-main_em.mb-100
+            .box-lg
+                .l-articleCata
+                    +menu("articleCata")
+                    button.d-none-mb.color-contrast.fz-rem-150.lh-100
+                        i.fas.fa-search
+        
+
+        .box-full
+            .box-lg
+                +siteMap(sitePoints)(class="mb-200 mb-100-pad fz-rem-100 fz-rem-0875-pad lh-1375 lh-140-pad")
+                div.d-flex(class="fz-rem-150 fz-rem-100-pad fz-rem-0875-mb lh-1333 lh-130-pad")
+                    each tag in optionsA.tags
+                        a.tag.tag--main( href=`#${tag}`, class="mr-200 mr-100-pad" )=tag
+                div.g-row
+                    .g-col-3-4.g-col-1-mb.mt-0.mb-500-mb
+                        +post(optionsA)
+                    .g-col-1-4.g-col-1-mb.mt-0
+                        +tagList(allTags)

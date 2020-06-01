@@ -1,0 +1,57 @@
+extend _layout.pug
+
+block content
+    include mixins/_iconParagraph
+    include mixins/_pagination
+    include mixins/_productCard
+    - 
+        var productInfo = [
+            {
+                title  : "BJ41600S",
+                price : 3490,
+                img : "./img/48@2x.png",
+                alt : "BJ41600S",
+                features : ["wood", "lighter"]
+            },
+            {
+                title  : "BJ41600S",
+                price : 3490,
+                img : "./img/51@2x.png",
+                alt : "BJ41600S",
+                features : ["wood", "lighter"]
+            },
+            {
+                title  : "BJ41600S",
+                price : 3490,
+                img : "./img/52@2x.png",
+                alt : "BJ41600S",
+                features : ["wood", "lighter"]
+            },
+        ];
+        var opticalList = [...productInfo, ...productInfo]
+
+    main.l-main
+        
+        .box-lg
+            +cataMenu()
+
+        .g-row.no-gutters-pad.mb-1_100.mb-500-pad.mb-300-mb
+            .g-col-1-2
+                .l-cataBanner.d-none-pad(style=`background-image:url(./img/80@2x.png)`)
+                .l-cataBanner.d-none.d-block-pad(style=`background-image:url(./img/80-pad@2x.png)`)
+            .g-col-1-2
+                .l-cataBanner.d-none-pad(style=`background-image:url(./img/15@2x.png)`)
+                .l-cataBanner.d-none.d-block-pad(style=`background-image:url(./img/15-pad@2x.png)`)
+        
+        section.box-full
+            .box-lg
+                header.text-center.mb-600.mb-400-pad.mb-125-mb
+                    h3.fz-rem-2625.fz-rem-200-pad.fz-rem-125-mb.lh-130 2020 NEW COLLECTION
+                    p.fz-rem-200.fz-rem-150-pad.fz-rem-100-mb.lh-140 賽璐珞鈦金屬混合鏡框
+                    
+                ul.g-row.mb-n1_300.mb-n900-pad.mb-n400-mb
+                    each product in opticalList
+                        li.g-col-1-3.g-col-1-2-pad.g-col-1-mb.mb-1_300.mb-900-pad.mb-400-mb
+                            +productCard_sunglass(product)
+
+                    

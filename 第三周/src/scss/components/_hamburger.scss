@@ -1,0 +1,62 @@
+.hamburger{
+    &__list__title, &__list__content{
+        padding: 22px 38px;
+    }
+    &__list__title{
+        @extend %no-pointer-touch-device;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+    &__list__content{
+        font-size: 1rem;
+        line-height: 1.5;
+        display: none;
+    }
+    
+    @include pad{
+        &__list__title, &__list__content{
+            padding: 16px 24px; 
+        }
+        &__list__title{
+            font-size: 1rem;
+            line-height: 1.375;
+        }
+        &__list__content{
+            font-size: 0.875rem;
+        }
+    }
+    @include pad{
+        &__list__title, &__list__content{
+            padding: 16px; 
+        }
+    }
+}
+.hamburger--main{
+    border: 1px solid #000;
+    border-bottom: 0;
+    .hamburger__list__title, 
+    .hamburger__list__content {
+        border-bottom: 1px solid #000;
+    }
+    .hamburger__list__title{
+        font-weight: bold;
+        transition: .2s;
+        &:hover{
+            background: $main;
+            color: white;
+            .hamburger__list__title__icon{
+                fill: $contrast;
+                transform: rotate(-180deg);
+            }
+        }
+        &__icon{
+            transition: transform .2s;
+        }
+    }
+    .hamburger__list__content{
+        background-color: #F2F2F2;
+    }
+}

@@ -1,0 +1,49 @@
+include _iconParagraph
+
+mixin post(options)
+    - 
+        const prevTitle = `上一篇：${options.prev.title}`;
+        const nextTitle = `下一篇：${options.next.title}`;
+    article.post.post--main
+        header.post__header
+            h2.post__header__title=options.title
+            p.post__header__subTitle=options.subTitle
+                span.post__header__subTitle__desc=options.dateString
+
+        section.post__section!=options.innerHTML
+
+        footer
+            .post__shareBar
+                span.post__shareBar__title Share
+                i.post__shareBar__icon.fab.fa-facebook-square
+                i.post__shareBar__icon.fab.fa-instagram
+            hr.post__hr
+            nav.post__footNav
+                a.post__footNav__prev(href=options.prev.link)
+                    +iconParagraph("next_prev",["far fa-arrow-alt-circle-left"], prevTitle)
+                a.post__footNav__next(href=options.next.link)
+                    +iconParagraph("next_prev",["far fa-arrow-alt-circle-right"], nextTitle, "rl")
+                a.post__footNav__nextMobile(href=options.next.link)
+                    +iconParagraph("next_prev",["far fa-arrow-alt-circle-right"], nextTitle)
+
+
+mixin postListItem(options)
+    - const titleFz = ["fz-rem-200", "fz-rem-125-pad", "fz-rem-100-mb"];
+    - const subTitleFz = ["fz-rem-125","fz-rem-100-pad","fz-rem-0875-mb"];
+    - const subTitleDateFz = ["fz-rem-100","fz-rem-0875-pad"];
+    - const contentFz = ["fz-rem-125","fz-rem-0875-pad","lh-135-mb"];
+    
+    .g-row(class=attributes.class)
+        .g-col-1-2.g-col-1-mb.mb-100-mb
+            a.d-block.h-full.min-h-200.bg-center.bg-cover.bg-norepeat(style=`background-image: url(${options.cover})`,
+                                                            href=options.link)
+        .g-col-1-2.g-col-1-mb
+            article.post
+                header.post__header.mb-500.mb-200-pad.mb-0-mb
+                    h2.post__header__title.mb-0.color-main_em(class=titleFz)=options.title
+                    p.post__header__subTitle(class=subTitleFz)=options.subTitle
+                        span.post__header__subTitle__desc(class=subTitleDateFz)=options.dateString
+                section.post__section.mb-400.mb-0-pad.d-none-mb(class=contentFz).
+                    #{options.innerText} #[a.d-none.d-inline-pad(href=options.link) more]
+                a.d-none-pad(href=options.link)
+                    +iconParagraph("more",["fas fa-arrow-right"], "MORE","rl")

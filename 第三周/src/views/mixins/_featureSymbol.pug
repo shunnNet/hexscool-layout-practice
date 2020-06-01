@@ -1,0 +1,7 @@
+mixin featureSymbol(feature,page,relation=[])
+    div.featureSymbol(class=[`featureSymbol--${feature}`, ...pages[page], ...relation ])
+
+- 
+    const pages = {
+        productList : ["fz-rem-150","fz-rem-100-mb"]
+    }

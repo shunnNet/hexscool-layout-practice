@@ -54,7 +54,7 @@ function compilePug(cb) {
             return JSON.parse(fs.readFileSync('./model/data.json')); //fs.readFileSync('./examples/' + path.basename(file.path) + '.json')
         }))
         .pipe($.pug({
-             pretty: false // [Deprecated]
+             pretty: true // [Deprecated]
             // true to compile no minify html  , other option : https://pugjs.org/api/reference.html && https://www.npmjs.com/package/gulp-pug
         }))
         .pipe(gulp.dest(env.template.path))

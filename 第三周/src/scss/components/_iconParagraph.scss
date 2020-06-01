@@ -1,0 +1,51 @@
+.iconParagraph{
+    display: flex;
+    align-items: center;
+    &__icon{
+        align-self: center;
+        flex-shrink: 0;
+    }
+}
+.iconParagraphMoreShadow{
+    position: relative;
+    background-color: $contrast;
+    padding: 5px 20px 5px 32px;
+    
+    %textShadowCommon{
+        position: absolute;
+        transition: transform 1s;
+    }
+
+    &__textShadowTop{
+        @extend %textShadowCommon;
+        opacity: .3;
+    }
+    &__textShadowMiddle{
+        @extend %textShadowCommon;
+        opacity: .7;
+    }
+    .fas{
+        transition: transform 1s;
+    }
+    &:hover{
+        .iconParagraphMoreShadow__textShadowTop{
+            transform: translate3d(0px, -175%, 0);
+        }
+        .iconParagraphMoreShadow__textShadowMiddle{
+            transform: translate3d(0px, -110%, 0);
+        }
+        .fas{
+            transform: translate3d(30%, 0, 0);
+        }
+    }
+    @include screen-wide {
+        padding: 5px 20px 5px 20px;
+    }
+
+    @include mobile {
+        padding: 4px 12px ;
+    }
+    @media (max-width : 340px) {
+        padding: 4px 2px;
+    }
+}

@@ -1,0 +1,165 @@
+.storeCard{
+    &__title{
+        font-size: 1.5rem;
+        line-height: 1.33333333;
+        padding: ($space * 2) ($space * 3);
+    }
+    &__body{
+        padding: ($space * 2) ($space * 5);
+        &__p{
+            margin-bottom: $space;
+        }
+        &__p:last-child{
+            margin-bottom: 0;
+        }
+    }
+    &__link{
+        display: block;
+        padding: ($space * 2.5) 0;
+        font-size: 1.25rem;
+        line-height: 1.75;
+        text-align: center;
+    }
+    @include pad{
+        &__title{
+            font-size: 1rem;
+            line-height: 1.375;
+            padding: $space ($space * 2);
+        }
+        &__body{
+            padding: $space * 2;
+        }
+        &__link{
+            font-size: 0.85rem;
+            line-height: 1.4;
+            padding: $space * 2;
+        }
+    }
+}
+
+.storeCard--main{
+    .storeCard__title{
+        font-weight: bold;
+        border: 1px solid rgba(0, 0, 0, 0.13);
+    }
+    .storeCard__body{
+        border: 1px solid rgba(0, 0, 0, 0.13);
+    }
+    .storeCard__link{
+        background-color: $black;
+        color: $contrast;
+        transition: .2s;
+        cursor: pointer;
+        &:hover {
+            background-color: $main;
+            color: $contrast;
+        }
+    }
+}
+
+.productCard{
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        line-height: 1.33333333333;
+        margin-bottom: $space * 0.5;
+    }
+    &__features{
+        display: flex;
+        &__mark{
+            margin-right: $space;
+        }
+        &__mark:last-child{
+            margin-right: 0;
+        }
+    }
+    @include pad{
+        &__title{
+            margin-bottom: 0;
+        }
+    }
+    @include mobile{
+        &__title{
+            font-size: 1rem;
+            line-height: 1.375;
+        }
+        &__features__mark{
+            margin-right: $space * 0.625;   
+        }
+    }
+}
+.productCard--main{
+    .productCard__title__subDesc{
+        color: $main;
+    }
+}
+
+.iconCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__icon{
+        width: 100px;
+        height: 100px;
+        margin-bottom: $space * 5;
+    }
+    &__title{
+        margin-bottom: $space * 0.5;
+        font-size: 1.5rem;
+        line-height: 1.375;
+    }
+    &__content{
+        flex: 1 1 1px;
+        line-height: 1.5;
+    }
+    @include pad {
+        &__icon{
+            height: 80px;
+            width: 80px;
+            margin-bottom: $space * 2;
+        }
+        &__title{
+            margin-bottom: $space;
+            font-size: 1.25rem;
+            line-height: 1.4;
+        }
+    }
+}
+.iconCard--main{
+    .iconCard__title{
+        color: $main_em;
+        font-weight: bold;
+    }
+}
+
+
+.socialCard{
+    &__body{
+        padding: $space * 2;
+        line-height: 1.3125;
+        &__title{
+            margin-bottom: $space * 2;
+        }
+        &__desc{
+            margin-bottom: $space * 2;
+            line-height: 1.5; 
+        }
+
+    }
+}
+
+.socialCard--main{
+    .socialCard__body{
+        border: 1px solid #DEE2E6;
+        border-top: 0;
+        background-color: $contrast;
+        &__title{
+            font-weight: bold;
+        }
+        &__subDesc{
+            color: #707070;
+        }
+    }
+
+}

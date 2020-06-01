@@ -1,0 +1,295 @@
+.box-full{
+    @extend %layoutBoxBase;
+    max-width: $container-full;
+    padding-right: $space * 11;
+    padding-left: $space * 11;
+    @include pad{
+        padding-right: $space * 6;
+        padding-left: $space * 6;
+    }
+    @include mobile{
+        padding-right: $space * 1.5;
+        padding-left: $space * 1.5;
+    }
+}
+.box-lg{
+    @extend %layoutBoxBase;
+    max-width: $container-lg;
+}
+.box-md{
+    @extend %layoutBoxBase;
+    max-width: $container-md;
+}
+.l-nav,.l-footer{
+    background-color: $main;
+    color: $contrast;
+}
+
+.l-navFixBox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.l-nav{
+    @extend .box-full;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 108px;
+    @include mobile{
+        height: auto;
+        &::after{
+            content : "";
+            display: block;
+            width: 50px;
+        }
+    }
+}
+.l-nav__toggler{
+    height: 50px;
+    width: 50px;
+    font-size: 1.25em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $contrast;
+}
+
+.l-logo{
+    width: 80px;
+    height: 48px;
+    display: block;
+    background-image: url(./img/logo-new_2x.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.l-nav__logo{
+    @extend .l-logo;
+    @include hide-text;
+}
+@include mobile{
+    .l-logo, .l-nav__logo{
+        width: 48px;
+        height: 30px;
+    }
+}
+.l-nav__menu-mb{
+    @include mobile{
+        //display: none; // fix : switch by js.
+        position: absolute;
+        background-color: $main;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        transform: translate3d(-100%,0,0);
+        transition: transform .5s;
+        .menu__li{
+            border: 1px solid $contrast;
+        }
+        &.active{
+            transform: translate3d(0,0,0);
+        }
+    }
+}
+
+
+.l-main{
+    margin-top: 108px;
+    padding-bottom: $space * 19.5;
+    @include pad{
+        padding-bottom: $space * 13;
+    }
+    @include mobile{
+        margin-top: 50px;
+        padding-bottom: $space * 5;
+    }
+    
+}
+
+
+.l-footer{
+    @extend .box-full;
+    padding-top: $space * 4.5;
+    padding-bottom: $space * 3.5;
+
+    @include pad{
+        padding-top: $space * 5;
+        padding-bottom: $space * 5;
+    }
+    @include mobile{
+        padding-top: $space * 3;
+        padding-bottom: $space * 2.5;
+    }
+    &__wrap{
+        @extend .box-lg;
+        padding-right: $space * 3.125;
+        padding-left: $space * 3.125;
+        @include pad{
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    &__body{
+        padding-bottom: $space * 3;
+        border-bottom: 1px solid $contrast;
+        margin-bottom: $space * 3;
+        &__nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: $space * 3;
+            @include mobile{
+                float: right;
+            }
+        }
+    }
+}
+
+.l-footer__addr{
+    font-size: 2.25rem;
+    line-height: 1.3333333;
+    &__itm{
+        display: flex;
+        align-items: center;
+    }
+    &__itm__icon{
+        margin-right: $space * 1.5;
+        font-size: 1.333333em;
+    }
+    @include pad{
+        font-size: 1.25rem;
+        line-height: 1.3;
+        &__itm__icon{
+            margin-right: $space;
+            font-size: 1.6em;
+        }
+    }
+    @include mobile{
+        font-size: 1rem;
+        line-height: 1.25;
+        &__itm__icon{
+            font-size: 1.25em;
+        }
+    }
+
+}
+.l-footer__foot{
+    display: flex;
+    justify-content: space-between;
+    &__logo{
+        @extend .l-logo;
+        margin-right: $space * 4.75;
+    }
+    &__info{
+        flex : 1 1 1px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @include pad {
+        &__logo{
+            display: none;
+        }
+    }
+    @include mobile {
+        &__logo{
+            display: block;
+            margin-right: 0;
+            order: 2;
+            align-self: flex-end;
+        }
+        &__info{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}
+
+.l-articleCata{
+    color: $contrast;
+    font-weight: bold;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__menu{
+        font-size: 1.25rem;
+        line-height: 1.4;
+        &__list{
+            margin-right: $space * 6;
+        }
+        &__link{
+            padding-top: $space;
+            padding-bottom: $space;
+        }
+    }
+    @include pad {
+        &__menu{
+            font-size: 1rem;
+            line-height: 1.375;
+            &__list{
+                margin-right: $space * 4;
+            }
+        }
+    }   
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        background-color: $contrast;
+        color: $black;
+        &__menu{
+            width: 100%;
+            flex-direction: column;
+        }
+        &__menu__list{
+            margin-right: 0;
+            border: 1px solid rgba(0, 0, 0, 0.13);
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
+    &__menuToggler{
+        @extend .l-articleCata__menu__list;
+        cursor: pointer;
+        display: none;
+        height: auto;
+        padding: $space;
+        min-height: 28px;
+        &__icon{
+            font-size: 1.25rem;
+            transition: transform .2s;
+        }
+        @include mobile{
+            display: block;
+        }
+    }
+    &__menuToggler.active{
+        .l-articleCata__menuToggler__icon{
+            transform : rotate(180deg);
+        }
+    }
+}
+
+.l-cataBanner{
+    height : 309px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include mobile{
+        height: 144px;
+    }
+}

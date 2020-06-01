@@ -1,0 +1,15 @@
+mixin pagination(pageCount,nowPage)
+    ul.pagination.pagination--main
+        - var n = 0;
+        li.pagination__list
+            a.pagination__list__link(href=`#${nowPage - 1}`) 上一頁
+
+        while n <= pageCount
+            - n++
+            li.pagination__list
+                a.pagination__list__link(href=`#${n}`, 
+                                        class={"pagination__list__link--active" : n===nowPage})= n
+        
+        li.pagination__list
+            a.pagination__list__link.pagination__list__link--next(href=`#${nowPage + 1}`) 下一頁
+            

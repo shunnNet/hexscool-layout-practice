@@ -1,0 +1,123 @@
+mixin menu(name)
+    - 
+        const menu = menus[name];
+        const slots = [];
+
+    mixin slot()
+        - slots.push(block)
+            
+    block
+    
+    ul.menu(class= menu.class.menu, id=attributes.id)
+        each item,i in menu.items
+            li.menu__li(class= item.listClass ? item.listClass : menu.class.list)
+                a.menu__li__link(href=item.link,
+                                class=item.linkClass ? item.linkClass 
+                                    : menu.class.link)!= item.text
+                    if slots[i]
+                        -   
+                            slots[i]()
+
+
+- 
+    const main = {
+        class:{
+            menu : ["l-nav__menu-mb","fz-rem-125","lh-140"] ,
+            list : ["mr-64","mr-40-pad","mr-0-mb"] ,
+            link : ["py-150","py-200-mb"]
+        },
+        items: [
+            { text: "系列鏡框" , link: "./product_optical.html"} ,
+            { text: "門市據點" , link: "./storeList.html"} ,
+            { text: "部落格" ,   link: "./postList.html"} ,
+            { text: "常見問題" , link: "./question.html"} ,
+        ]
+    }
+    const foot = {
+        class:{
+            menu : ["lh-1375", "d-none-mb"],
+            list : ["mr-600","mr-500-pad"],
+            link : ["py-150"]
+        },
+        items: [
+            { text: "首頁" , link: "#"} ,
+            { text: "系列鏡框" , link: "#"} ,
+            { text: "門市據點" , link: "#"} ,
+            { text: "部落格" , link: "#"} ,
+            { text: "常見問題" , link: "#"} ,
+        ]
+    }
+
+    const social = {
+        class:{
+            menu : ["fz-rem-300", "fz-rem-150-pad", "lh-100"],
+            list : ["mr-400","mr-300-pad"],
+        },
+        items: [
+            { text: '<i class="fab fa-facebook"></i>' , link: "#" } ,
+            { text: '<i class="fab fa-instagram"></i>' , link: "#" } ,
+            { text: '<i class="fab fa-line"></i>' , link: "#"} ,
+        ]
+    }
+    const policy = {
+        class:{
+            menu : ["f-col-mb","text-left-mb","fz-rem-085","lh-140"],
+            list : ["mr-775","mr-300-pad","mr-0-mb","mb-100-mb"],
+        },
+        items: [
+            { text: '隱私權政策' , link: "#" } ,
+            { text: '服務條款' , link: "#" , listClass:["mb-0-mb"]} ,
+            
+        ]
+    }
+    const articleCata = {
+        class:{
+            menu : ["l-articleCata__menu","d-none-mb"],
+            list : ["l-articleCata__menu__list"],
+            link : ["l-articleCata__menu__link"]
+        },
+        items: [
+            { text: '最新消息' , link: "#" } ,
+            { text: '特別企劃' , link: "#"} ,
+            { text: '新品上市' , link: "#"} ,
+            { text: '鏡框小知識' , link: "#"} ,
+        ]
+    }
+    const productCata = {
+        class:{
+            menu : ["g-row","no-gutters"],
+            list : ["g-col-1-3","bd-1","bd--light","appearBorder"],
+            link : ["d-flex","f-main-center","py-300","py-200-pad","py-100-mb"]
+        },
+        items: [
+            { text: '' , link: "./product_optical.html" } ,
+            { text: '' , link: "./product_sunglasses.html"} ,
+            { text: '' , link: "#"} ,
+            
+        ]
+    }
+
+    const menus = {
+        main : main ,
+        foot : foot ,
+        social : social,
+        policy : policy,
+        articleCata : articleCata,
+        productCata : productCata
+    }
+
+mixin cataMenu()
+    +menu("productCata")
+        +slot()
+            +iconParagraph("productCata",["far","fa-gem"],"OPTICAL")
+        +slot()
+            +iconParagraph("productCata",["far","fa-sun"],"SUNGLASSES")
+        +slot()
+            +iconParagraph("productCata",["fas","fa-bolt"],"FUNCTIONAL")
+
+                            
+mixin menuToggle()
+    +menu("articleCata")(id=attributes.id)
+    button.l-articleCata__menuToggler#js-article-cata-toggler
+        i.l-articleCata__menuToggler__icon.fas.fa-chevron-down
+    

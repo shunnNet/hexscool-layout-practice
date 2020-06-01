@@ -1,0 +1,9 @@
+.tag{
+    &::before{
+        content: "#";
+    }
+}
+.tag--main{
+    font-weight: bold;
+    color: $main;
+}

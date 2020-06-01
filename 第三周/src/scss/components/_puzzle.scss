@@ -1,0 +1,87 @@
+
+// Puzzle Layout
+.puzzle{
+    display: flex;
+    &__left{
+        flex: 0 1 573px;
+    }
+    &__right {
+        flex: 0 1 958px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.puzzle.puzzleL2{
+    flex: 1 1 1px;
+    .puzzle__left{
+        flex : 1 1 132px;
+        background-image: url(./img/24.png);
+        background-position: 0 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+@include mobile{
+    .puzzle__left{
+        flex: 1 0 156px;
+    }
+    .puzzle__right{
+        flex: 1 1 169px;
+    }
+    .puzzle.puzzleL2{
+        .puzzle__left{
+            flex: 1 0 32px;
+        }
+    }
+}
+
+// Puzzle Gutter
+.puzzle{
+    &__left { margin-right: $space; }
+    &__right__img{ margin-bottom: $space; }
+    @include pad{
+        &__left { margin-right: $space / 2; }
+        &__right__img{ margin-bottom: $space / 2 ; }
+    }
+    @include mobile{
+        &__left { margin-right: $space / 4; }
+        &__right__img{ margin-bottom: $space / 4; }
+    }
+}
+
+// Puzzle More
+.puzzle{
+    &__more{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        flex: 1 1 1px;
+        
+        &__layerBack{
+            position: absolute;
+            z-index: 0;
+            background-color: #fdcf00;
+            width: 259px;
+            height: 100%;
+            right: 83px;
+            @include screen-wide{
+                right: 50px;
+                width: 147px;
+            }
+            @include mobile{
+                right: 35px;
+                height: 53px;
+                width: 102px;
+            }
+            @include iphoneX {
+                left : 0;
+                right: unset;
+                width: (102 * 100 / 135)#{"%"};
+            }
+        }
+        
+    }
+}
+

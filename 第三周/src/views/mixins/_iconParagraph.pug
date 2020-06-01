@@ -1,0 +1,93 @@
+mixin iconParagraph(name,icons=[],text="",direction="lr")
+    - 
+        const item = iconPs[name];
+        const directClass = direction === "lr" ? [] : ["f-row-reverse"];
+        const iconRightSpace = direction === "lr" ? item.class.space : [];
+        const textRightSpace = direction === "rl" ? item.class.space : [];
+        
+    p.iconParagraph(class= [...item.class.p,...directClass,attributes.class])
+        i.iconParagraph__icon(class= [...icons, ...item.class.icon, ...iconRightSpace])
+        span.iconParagraph__text(class= [item.class.text, ...textRightSpace])= text
+
+mixin iconParagraphMoreShadow()
+    a.iconParagraphMoreShadow(href=attributes.href)
+        +iconParagraph("moreIndex",[],"MORE", "rl")(class="iconParagraphMoreShadow__textShadowTop")
+        +iconParagraph("moreIndex",[],"MORE", "rl")(class="iconParagraphMoreShadow__textShadowMiddle")
+        +iconParagraph("moreIndex",["fas","fa-arrow-right"],"MORE", "rl")
+
+- 
+    var iconPs = {
+        footerAddr : {
+            class: {
+                p : ["lh-1333","lh-130-pad","lh-125-mb"],
+                icon : ["fz-rem-300","fz-rem-200-pad","fz-rem-125-mb"],
+                text : ["fz-rem-225","fz-rem-125-pad","fz-rem-100-mb"],
+                space: ["mr-150","mr-100-pad"] ,
+            }
+        },
+        productCata : {
+            class: {
+                p : ["lh-130"],
+                icon : ["fz-rem-300","fz-rem-200-pad","fz-rem-100-mb"],
+                text : ["fz-rem-2625","fz-rem-175-pad","fz-rem-0875-mb"],
+                space: ["mr-100","mr-0625-mb"] ,
+            }
+        },
+        indexProductCata : {
+            class: {
+                p : ["lh-120","fw-bold","color-main","color-contrast-mb"],
+                icon : ["fz-rem-300","fz-rem-200-screen"],
+                text : ["fz-rem-300","fz-rem-175-screen"],
+                space: ["mr-100"] ,
+            }
+        },
+        tagsTitle : {
+            class: {
+                p : ["lh-130"],
+                icon : ["fz-rem-200","fz-rem-150-pad"],
+                text : ["fz-rem-175","fz-rem-125-pad"],
+                space: ["mr-100","mr-0-pad"] ,
+            }
+        },
+        next_prev : {
+            class: {
+                p : ["lh-1375","lh-140-mb"],
+                icon : ["fz-rem-150","fz-rem-100-pad","fz-rem-0875-mb"],
+                text : ["fz-rem-11875","fz-rem-100-pad","fz-rem-0875-mb"],
+                space: ["mr-100"] ,
+            }
+        },
+        more : {
+            class: {
+                p : ["fw-bold","lh-120"],
+                icon : ["fz-rem-150"],
+                text : ["fz-rem-225"],
+                space: ["mr-100"] ,
+            }
+        },
+        moreIndex : {
+            class: {
+                p : ["lh-1319","lh-135-swide","lh-130-mb"],
+                icon : ["fz-rem-300","fz-27-swide","fz-rem-1125-mb"],
+                text : ["ff-roboto","fw-bold","color-main","fz-rem-450","fz-rem-250-swide","fz-rem-1625-mb"],
+                space: ["mr-200","mr-125-swide","mr-100-mb"] ,
+            }
+        },
+        storeInfoLine : {
+            class: {
+                p : ["lh-140"],
+                icon : ["f-self-cross-start","fz-rem-150","fz-rem-1375-pad","fz-rem-100-mb"],
+                text : ["fz-rem-125","fz-rem-0875-pad"],
+                space: ["mr-100","mr-200-pad"] ,
+            }
+        },
+        pageBanner : {
+            class:{
+                p : ["lh-140","fw-bold"],
+                icon : ["fz-rem-350","fz-rem-300-pad","fz-rem-175-mb","color-main"],
+                text : ["fz-rem-400","fz-rem-300-pad","fz-rem-150-mb"],
+                space: ["mr-300","mr-200-pad","mr-100-mb"] ,
+            }
+            
+        },
+    } 

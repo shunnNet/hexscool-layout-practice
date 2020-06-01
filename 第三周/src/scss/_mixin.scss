@@ -60,7 +60,7 @@
 }
 
 @mixin hide-text{
-    text-indent: 100%;
+    text-indent: 101%;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -138,6 +138,12 @@
 	&:focus {
 		outline: 0;
 	}
+}
+
+%reset-select{
+    appearance: none;
+    -webkit-appearance:none;
+    -moz-appearance: none;
 }
 
 %text-ellipsis {

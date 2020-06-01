@@ -2,5 +2,25 @@
 @import 'reset';
 @import 'mixin';
 @import 'base';
+@import 'layout';
+@import 'index';
+@import 'grid';
+
 // components
+@import './components/menu';
+@import './components/iconParagraph';
+@import './components/card';
+@import './components/featureSymbol';
+@import './components/post';
+@import './components/tag';
+@import './components/siteMap';
+@import './components/appearBorder';
+@import './components/pagination';
+@import './components/form';
+@import './components/hamburger';
+@import './components/imgLayer';
+@import './components/slogan';
+@import './components/puzzle';
+
+// utilities & other
 @import 'util';

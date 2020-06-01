@@ -1,0 +1,8 @@
+mixin socialCard(options)
+    section.socialCard.socialCard--main
+        img(src=options.img)
+        .socialCard__body
+            h5.socialCard__body__title= options.title
+            p.socialCard__body__desc= options.content
+            p.socialCard__body__subDesc= options.time
+

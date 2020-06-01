@@ -1,0 +1,44 @@
+extend _layout.pug
+
+block content
+    include mixins/_storeCard
+    - 
+        var storeInfo = {
+            img : "./img/70@2x.png",
+            title : "台北中山旗艦店",
+            tel : "(02)000-1234",
+            startTime : "10:00",
+            endTime : "21:00",
+            address : "台北市中山區南京東路25巷2-1號",
+            link : "./store.html",
+        };
+        var storeOptions = [
+            {text : "台北中山旗艦店", value: "TCS"},
+            {text : "台北南軟展示中心", value: "TCS"},
+            {text : "台北公館研究店", value: "TCS"},
+            {text : "台北天母高級店", value: "TCS"},
+
+        ]
+    
+    main.l-main    
+        header.l-cataBanner.box-full.mb-200.mb-100-pad(style=`background-image:url(./img/72@2x.png)`)
+            .box-lg.h-full.d-flex.f-cross-end
+                h2
+                    +iconParagraph("pageBanner",["fas" ,"fa-map-marker-alt"],"門市據點", "rl" )
+        .box-full
+            .box-lg
+                section.g-row.mb-400.mb-300-pad.mb-250-mb
+                    .g-col-1-2.g-col-1-mb
+                        p.form__lineSame.form__lineSame--lg.form__lineSame--md-pad.mb-0
+                            label.form__subject(for="js-select-store") 選擇門市 
+                            select.form__unit#js-select-store
+                                each store in storeOptions
+                                    option(value= store.value)= store.text
+                                
+                section.g-row
+                    .g-col-1-3.g-col-1-pad.mb-400-pad.mb-250-mb
+                        +storeCardDetail(storeInfo)
+                    .g-col-2-3.g-col-1-pad
+                        img(src="./img/gmap@2x.png")
+
+                    

@@ -1,0 +1,7 @@
+include _iconParagraph
+
+mixin tagList(list)
+    +iconParagraph("tagsTitle",["fas fa-tag"], "TAGS")(class="color-main fw-bold mb-050 mb-100-mb")
+    .d-flex.f-wrap(class="fz-rem-150 fz-rem-100-pad lh-1333 lh-130-pad")
+        each tag in list
+            a.tag.tag--main(href=`#${tag}`, class="mr-300 mr-200-pad mr-100-mb mb-100 mb-0-pad")=tag

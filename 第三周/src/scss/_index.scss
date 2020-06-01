@@ -1,0 +1,202 @@
+@mixin indexCentralBgLayout($offset){
+    .l-index--centralBg{
+        background-image: url('./img/designBanner.png');
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: $offset;
+    }
+    .l-index-Recommend{
+        margin-top: -$offset;
+    }
+}
+@include indexCentralBgLayout(400px);
+
+
+
+.l-index-banner{
+    padding-top: $space * 8;
+    padding-bottom: $space * 10;
+    &__title{
+        text-align: center;
+        font-weight: bolder;
+        font-size: 3rem;
+        line-height: 1.4;
+        margin-bottom: $space * 7.5;
+    }
+    @include pad {
+        padding-top: $space * 5;
+        padding-bottom: $space * 5;
+        &__title{
+            font-size: 2rem;
+            margin-bottom: $space * 4;
+        }
+    }
+    @include mobile {
+        padding-top: $space * 3;
+        padding-bottom: $space * 3;
+        &__title{
+            font-size: 1.5rem;
+            line-height: 1.375;
+            margin-bottom: $space * 2;
+        }
+    }
+}
+
+.l-index-Feature{
+    .l-index-banner__title{
+        margin-bottom: $space * 5.5;
+    }
+    &__cardBox{
+        padding: 0 ( $space * 4);
+        padding-top : ($space * 2) ;
+        padding-bottom: ($space * 3) ;
+    }
+    @include pad{
+        padding-bottom: $space * 6;
+        &__cardBox{
+            padding: 0 ( $space * 6.25);
+            padding-top : ($space * 2.5) ;
+            padding-bottom: $space ;
+        }
+    }
+    @include mobile{
+        padding-top: $space * 4;
+        padding-bottom: $space * 7;
+
+        .l-index-banner__title{
+            margin-bottom: $space * 1.5;
+        }
+        &__cardBox{
+            padding: 0 ( $space * 8);
+            padding-top : ($space * 2.5) ;
+            padding-bottom: $space ;
+        }
+    }
+}
+
+.l-index-Classic{
+    &__row{
+        position: relative;
+        &__iconCol{
+            display: flex;
+            align-items: center;
+            @include pad{
+                justify-content: center;
+            }
+            @include mobile{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%,-50%,0);
+            }
+        }
+        &:nth-child(even){
+            flex-direction: row-reverse;
+            .l-index-Classic__row__iconCol{
+                justify-content: flex-end;
+            }
+            @include pad{
+                flex-direction: row;
+                .l-index-Classic__row__iconCol{
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+.l-index-Design{
+    @include pad{
+        padding-bottom: 0;
+    }
+    &__puzzleBox{
+        margin: auto;
+        max-width: 1540px;
+        margin-bottom: $space * 7.5;
+
+        @include pad{
+            margin-bottom: $space * 5;
+        }
+        @include mobile{
+            margin-bottom: $space * 2.5;
+        }
+    }
+}
+
+.l-index-Recommend{
+    @include mobile{
+        .l-index-banner__title{
+            margin-bottom: $space * 2;
+        }
+    }
+}
+
+
+.l-index-Contact{
+    background-color: $sub;
+    padding-bottom: $space * 11.5;
+    .l-index-banner__title{
+        margin-bottom: $space * 3;
+    }
+    .l-index-banner__desc{
+        font-size: 1.25rem;
+        line-height: 1.5;
+        margin-bottom: $space * 2.5;
+    }
+    @include pad{
+        padding-bottom: $space * 7;
+        .l-index-banner__title{
+            margin-bottom: $space * 2;
+        }
+    }
+    @include mobile{
+        padding-top: $space * 3;
+        padding-bottom: $space * 6;
+        .l-index-banner__title{
+            margin-bottom: $space;
+        }
+    }
+    textarea{
+        height: 136px;
+    }
+}
+
+
+
+.l-index-Intro{
+    height: 840px;
+    background-image: url(./img/68.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    line-height: 1.4;
+    color: $main_em;
+    &__title{
+        font-size: 4rem;
+        font-weight: bold;
+    }
+    &__subTitle{
+        font-size: 2.25rem;
+    }
+    @include pad{
+        background-image: url(./img/68-pad.png);
+        background-position: 0 center;
+        &__title{
+            font-size: 3rem;
+        }
+        &__subTitle{
+            font-size: 1.25rem;
+        }
+    }
+    @include mobile{
+        &__title{
+            font-size: 2rem;
+        }
+        &__subTitle{
+            font-size: 1rem;
+            line-height: 1.375;
+        }
+    }
+}
+

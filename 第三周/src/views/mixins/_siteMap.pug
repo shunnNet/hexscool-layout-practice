@@ -1,0 +1,5 @@
+mixin siteMap(points)
+    .siteMap(class=attributes.class)
+        each point in points
+            span.siteMap__point
+                a.siteMap__point__link(href=point.link)=point.text

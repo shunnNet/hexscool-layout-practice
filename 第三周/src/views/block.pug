@@ -1,0 +1,161 @@
+extend _layout.pug
+
+block content
+    include mixins/_post
+    include mixins/_pagination
+    include mixins/_iconParagraph
+    include mixins/_hamburger
+    - 
+        var options = {
+            img : "./img/70@2x.png",
+            title : "台北中山旗艦店",
+            tel : "(02)000-1234",
+            startTime : "10:00",
+            endTime : "21:00",
+            address : "台北市中山區南京東路25巷2-1號"
+        }
+        var articleList = [
+            {
+                cover : "./img/56@2x.png",
+                link : "#情人特別企劃",
+                title : "情人特別企劃",
+                subTitle : "2020 Valentine’s Special",
+                dateString : "2020/02/14",
+                innerText : "一年一度西洋情人節即將到來，我們推出最強「情人節企劃」，為這個甜蜜的節日加溫。本次拍攝的鏡框款式與 NEEDS CLASSIC 聯名設計款，偶爾跟另一半來個低調情侶單品，結合彼此喜好、找出合適框型款式，在這個春夏輕鬆搭出屬於你們的甜蜜默契！ 即日起至2/16為止，不論是熱戀情侶、自由自在一個人或是老夫老妻，只要從未來過本店的新朋友，綁定官方LINE好友，都可享專屬優惠⋯⋯",
+            },
+            {
+                cover : "./img/12@2x.png",
+                link : "#街頭潮人訪問",
+                title : "街頭潮人訪問",
+                subTitle : "Street Interview",
+                dateString : "2020/02/02",
+                innerText : "炎熱的夏季裡，衣著選擇經常希望以簡潔的風格為 主，但有時單純只穿搭 T 恤或短袖開襟襯衫，又覺 得整體造型度有點不足嗎？那麼不妨可以透過「配 件」，為穿搭點綴出與眾不同的視覺層次，而本季有 哪些必備的配件系列呢？一起從以下推薦的 3 款單 品，讓你瞬間帥氣爆棚散發型男品味⋯⋯",
+            },
+            {
+                cover : "./img/16@2x.png",
+                link : "#春季新品上市",
+                title : "春季新品上市",
+                subTitle : "New Selection",
+                dateString : "2020/02/02",
+                innerText : "2020 年春季的光學眼鏡跳脫前幾季流行的復古框 型，比起圓框與小方框等文青風格，偏向個性款式的 眉框眼鏡成為這一季的耀眼之星。除了經典款式如 黑色眉框落在長方形鏡面上，眉宇之間露出專業莊重 的特殊氣質，包覆在圓形鏡框上的貓眼型眉框則是強 調出特殊設計感，俐落時髦的造型搭配⋯⋯",
+            },
+            {
+                cover : "./img/93@2x.png",
+                link : "#設計師獨享鏡框優惠",
+                title : "設計師獨享鏡框優惠",
+                subTitle : "Sales for Designer",
+                dateString : "2020/01/18",
+                innerText : "2020 年春季的光學眼鏡跳脫前幾季流行的復古框 型，比起圓框與小方框等文青風格，偏向個性款式的 眉框眼鏡成為這一季的耀眼之星。除了經典款式如 黑色眉框落在長方形鏡面上，眉宇之間露出專業莊重 的特殊氣質，包覆在圓形鏡框上的貓眼型眉框則是強 調出特殊設計感，俐落時髦的造型搭配⋯⋯",
+            },
+            {
+                cover : "./img/94@2x.png",
+                link : "#抵抗夏日大作戰",
+                title : "抵抗夏日大作戰",
+                subTitle : "Summer Special",
+                dateString : "2019/08/07",
+                innerText : "2020 年春季的光學眼鏡跳脫前幾季流行的復古框 型，比起圓框與小方框等文青風格，偏向個性款式的 眉框眼鏡成為這一季的耀眼之星。除了經典款式如 黑色眉框落在長方形鏡面上，眉宇之間露出專業莊重 的特殊氣質，包覆在圓形鏡框上的貓眼型眉框則是強 調出特殊設計感，俐落時髦的造型搭配⋯⋯",
+            },
+        ]
+
+        var optionsA = {
+            cover : "./img/56@2x.png",
+            title : "情人特別企劃",
+            subTitle : "2020 Valentine’s Special",
+            dateString : "2020/02/14",
+            tags : ["special", "event"],
+            prev : {
+                title : "街頭潮人訪問 1",
+                link : "#街頭潮人訪問_1"
+            },
+            next : {
+                title : "街頭潮人訪問 2",
+                link : "#街頭潮人訪問_2"
+            },
+            innerHTML : `
+                <img class="post__section__img" src="./img/56@2x.png" />
+                <p class="post__section__p">
+                    一年一度西洋情人節即將到來，我們推出最強「情人節企劃」，為這個甜蜜的節日加溫。<br>
+                    本次拍攝的鏡框款式與 NEEDS CLASSIC 聯名設計款，
+                    偶爾跟另一半來個低調情侶單品，結合彼此喜好、找出合適框型款式，在這個春夏輕鬆搭出屬於你們的甜蜜默契！
+                </p>
+                <img class="post__section__img" src="./img/44@2x.png" />
+                <p class="post__section__p">
+                    一年一度西洋情人節即將到來，我們推出最強「情人節企劃」，為這個甜蜜的節日加溫。<br>
+                    本次拍攝的鏡框款式與 NEEDS CLASSIC 聯名設計款，
+                    偶爾跟另一半來個低調情侶單品，結合彼此喜好、找出合適框型款式，在這個春夏輕鬆搭出屬於你們的甜蜜默契！
+                </p>
+                <img class="post__section__img" src="./img/48@2x.png" />
+                <p class="post__section__p">
+                    一年一度西洋情人節即將到來，我們推出最強「情人節企劃」，為這個甜蜜的節日加溫。<br>
+                    本次拍攝的鏡框款式與 NEEDS CLASSIC 聯名設計款，
+                    偶爾跟另一半來個低調情侶單品，結合彼此喜好、找出合適框型款式，在這個春夏輕鬆搭出屬於你們的甜蜜默契！
+                </p>
+                <img class="post__section__img" src="./img/92@2x.png" />
+                <p class="post__section__p">2/14(五)-2/20(日)<br />
+                    至本店單筆消費滿2980元, 就送情人節限定眼鏡盒1個<br />
+                    期間優惠還有~~持他牌鏡框更換鏡片<br />
+                    薄型非球面鏡片折300元<br />
+                    濾藍光鏡片折500元<br />
+                    <br />
+                    快快帶上另一半 讓彼此每一次睜開眼，都被愛的視線包圍！
+                </p>
+            `,
+            innerText : "一年一度西洋情人節即將到來，我們推出最強「情人節企劃」，為這個甜蜜的節日加溫。本次拍攝的鏡框款式與 NEEDS CLASSIC 聯名設計款，偶爾跟另一半來個低調情侶單品，結合彼此喜好、找出合適框型款式，在這個春夏輕鬆搭出屬於你們的甜蜜默契！ 即日起至2/16為止，不論是熱戀情侶、自由自在一個人或是老夫老妻，只要從未來過本店的新朋友，綁定官方LINE好友，都可享專屬優惠⋯⋯",
+        }
+    main.l-main
+
+        .box-lg
+            +cataMenu()
+            //- +cardDDD("cardTest")
+        .box-full.l-cataBanner(style=`background-image:url(./img/72@2x.png)`)
+            .box-lg.h-full.d-flex.f-cross-end
+                h2
+                    +iconParagraph("pageBanner",["fas" ,"fa-map-marker-alt"],"門市據點", "rl" )
+        .g-row.no-gutters-pad
+            .g-col-1-2
+                .l-cataBanner.d-none-pad(style=`background-image:url(./img/2@2x.png)`)
+                .l-cataBanner.d-none.d-block-pad(style=`background-image:url(./img/2-pad@2x.png)`)
+            .g-col-1-2
+                .l-cataBanner.d-none-pad(style=`background-image:url(./img/11@2x.png)`)
+                .l-cataBanner.d-none.d-block-pad(style=`background-image:url(./img/11-pad@2x.png)`)
+        
+        .box-full.bg-main_em.mb-1_100.mb-500-pad.mb-300-mb
+            .box-lg
+                nav.l-articleCata
+                    +menu("articleCata")
+                    button.d-none-mb.color-contrast.fz-rem-150.lh-100
+                        i.fas.fa-search
+        .box-full
+            .box-lg
+                .g-row
+                    .g-col-1-2.g-col-1-mb
+                        p.form__lineSame.form__lineSame--lg.form__lineSame--md-pad
+                            label.form__subject(for="js-select-city") 選擇地區 
+                            select.form__unit#js-select-city
+                                option(value="taipei") Taipei
+                                option(value="taichung") taichung
+                                option(value="kaoshiung") kaoshiung
+                                option(value="newTaipei") newTaipei
+        .box-full
+            .box-lg
+                p.form__line.form__line--black
+                    label.form__subject(for="js-name") 姓名
+                    input.form__unit#js-name(placeholder="hexschool@email.com")
+        .box-full
+            .box-lg
+                +hamburger([
+                    { title:"Q1.請問可否自備鏡框單配鏡片？" , content: "A1.我牌鏡框搭配薄型非球面鏡片1480元，搭配功能型鏡片則依鏡片種類加價購買。當日購買JINS盒裝眼鏡，搭配薄型非球面鏡片980元(隔日後則為1480元)，搭配功能型鏡片則依鏡片種類加價購買。 他牌鏡框，搭配薄型非球面鏡片1980元，搭配功能型鏡片則依鏡片種類加價購買。" },
+                    { title:"Q2.眼鏡都可以20分鐘取件嗎？" , content: "A1.我牌鏡框搭配薄型非球面鏡片1480元，搭配功能型鏡片則依鏡片種類加價購買。 當日購買JINS盒裝眼鏡，搭配薄型非球面鏡片980元(隔日後則為1480元)，搭配功能型鏡片則依鏡片種類加價購買。 他牌鏡框，搭配薄型非球面鏡片1980元，搭配功能型鏡片則依鏡片種類加價購買。" },
+                    { title:"Q3.散光鏡片需要額外加價嗎？" , content: "A1.我牌鏡框搭配薄型非球面鏡片1480元，搭配功能型鏡片則依鏡片種類加價購買。 當日購買JINS盒裝眼鏡，搭配薄型非球面鏡片980元(隔日後則為1480元)，搭配功能型鏡片則依鏡片種類加價購買。 他牌鏡框，搭配薄型非球面鏡片1980元，搭配功能型鏡片則依鏡片種類加價購買。" },
+                    { title:"Q4.我可以使用舊眼鏡的度數配鏡片嗎？" , content: "A1.我牌鏡框搭配薄型非球面鏡片1480元，搭配功能型鏡片則依鏡片種類加價購買。 當日購買JINS盒裝眼鏡，搭配薄型非球面鏡片980元(隔日後則為1480元)，搭配功能型鏡片則依鏡片種類加價購買。 他牌鏡框，搭配薄型非球面鏡片1980元，搭配功能型鏡片則依鏡片種類加價購買。" },
+                    { title:"Q5.請問可以單購買鏡框嗎？" , content: "A1.我牌鏡框搭配薄型非球面鏡片1480元，搭配功能型鏡片則依鏡片種類加價購買。 當日購買JINS盒裝眼鏡，搭配薄型非球面鏡片980元(隔日後則為1480元)，搭配功能型鏡片則依鏡片種類加價購買。 他牌鏡框，搭配薄型非球面鏡片1980元，搭配功能型鏡片則依鏡片種類加價購買。" },
+
+                ])
+
+
+        .box-full
+            .box-lg
+                each article in articleList
+                    +postListItem(article)(class="mb-750 mb-400-pad mb-300-mb")
+        .d-flex.f-main-center    
+            +pagination(5,2)

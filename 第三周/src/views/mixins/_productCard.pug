@@ -1,0 +1,28 @@
+include _featureSymbol
+
+mixin productCard(options)
+    - 
+        const Price = `NTD${options.price}`;
+
+    article.productCard.productCard--main
+        img(src=options.img, alt=options.alt)
+        h3.productCard__title.
+            #{options.title}#[span.productCard__title__subDesc=Price]
+        div.productCard__features
+            each feature in options.features
+                +featureSymbol(feature,"productList",["productCard__features__mark"])
+
+
+mixin productCard_sunglass(options)
+    - 
+        const Price = `NTD${options.price}`;
+        
+    article.productCard.productCard--main
+        img(src=options.img, alt=options.alt)
+        h3.productCard__title(class="f-col f-row-pad").
+            #{options.title}#[span.productCard__title__subDesc=Price]
+        div.productCard__features
+            each feature in options.features
+                +featureSymbol(feature,"productList",["productCard__features__mark"])
+
+

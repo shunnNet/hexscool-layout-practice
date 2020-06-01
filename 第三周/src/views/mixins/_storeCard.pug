@@ -1,0 +1,33 @@
+include _iconParagraph
+
+mixin storeCard(options)
+    - 
+        const text_tel=  "電話：" + options.tel;
+        const text_time= `營業時間：${options.startTime}-${options.endTime}`;
+        const text_addr= `地址：${options.address}`;
+
+    article.storeCard.storeCard--main
+        img(src=options.img)
+        h3.storeCard__title=options.title
+        section.storeCard__body
+            +iconParagraph("storeInfoLine", ["fas fa-phone-alt"], text_tel)(class="storeCard__body__p")
+            +iconParagraph("storeInfoLine", ["far fa-clock"], text_time)(class="storeCard__body__p")
+            +iconParagraph("storeInfoLine", ["fas fa-map-marker-alt"], text_addr)(class="storeCard__body__p")
+        a.storeCard__link(href=options.link) 詳細資訊
+
+mixin storeCardDetail(options)
+    - 
+        const text_tel=  "電話：" + options.tel;
+        const text_time= `營業時間：${options.startTime}-${options.endTime}`;
+        const text_addr= `地址：${options.address}`;
+
+    article.storeCard.d-flex.f-col.f-row-pad.f-col-mb
+        div.flex-1.w-full.mr-gutter-pad.mr-0-mb.f-self-cross-center
+            img(src=options.img)
+        div.flex-1.w-full.py-100-pad.py-0-mb.d-flex.f-col
+            h3.storeCard__title=options.title
+            section.storeCard__body.flex-1
+                +iconParagraph("storeInfoLine", ["fas fa-phone-alt"], text_tel)(class="storeCard__body__p")
+                +iconParagraph("storeInfoLine", ["far fa-clock"], text_time)(class="storeCard__body__p")
+                +iconParagraph("storeInfoLine", ["fas fa-map-marker-alt"], text_addr)(class="storeCard__body__p")
+            a.storeCard__link.d-none-pad(href=options.link) 詳細資訊
