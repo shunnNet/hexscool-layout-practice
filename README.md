@@ -30,7 +30,7 @@
 5. 修改 Intro 文字與背景的相對關係。
 
 ## Week 3 
-[Week 3+4 glasses-layout](https://shunnnet.github.io/hexscool-layout-practice/第三、四周/index.html)
+[Week 3+4 glasses-layout](https://shunnnet.github.io/hexscool-layout-practice/第三、四周/public/index.html)
 
 第三、四周 - 眼鏡品牌網站
 本次練習項目 : 無
